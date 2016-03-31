@@ -759,7 +759,7 @@ void EClientSocketBase::cancelMktDepth( TickerId tickerId)
 void EClientSocketBase::reqHistoricalData( TickerId tickerId, const Contract &contract,
 									   const IBString &endDateTime, const IBString &durationStr,
 									   const IBString & barSizeSetting, const IBString &whatToShow,
-									   int useRTH, int formatDate)
+									   int useRTH, int formatDate, const TagValueListSPtr& chartOptions)
 {
 	// not connected?
 	if( !m_connected) {
@@ -2740,6 +2740,9 @@ int EClientSocketBase::processConnectAck(const char*& beginPtr, const char* endP
 				std::ostringstream msg;
 				ENCODE_FIELD( m_clientId);
 				bufferedSend( msg.str());
+			}
+			else if (!m_extraAuth) {
+				startApi();
 			}
 			std::ostringstream msg;
 			ENCODE_FIELD( m_clientId);
