@@ -166,13 +166,13 @@ void PosixTestClient::placeOrder()
 	Contract contract;
 	Order order;
 
-	contract.symbol = "MSFT";
+	contract.symbol = "IBM";
 	contract.secType = "STK";
 	contract.exchange = "SMART";
 	contract.currency = "USD";
 
 	order.action = "BUY";
-	order.totalQuantity = 1000;
+	order.totalQuantity = 100;
 	order.orderType = "LMT";
 	order.lmtPrice = 0.01;
 
