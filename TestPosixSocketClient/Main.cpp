@@ -2,7 +2,7 @@
  * and conditions of the IB API Non-Commercial License or the IB API Commercial License, as applicable. */
 
 #ifdef _WIN32
-# include <windows.h>
+# include <Windows.h>
 # define sleep( seconds) Sleep( seconds * 1000);
 #else
 # include <unistd.h>
@@ -10,13 +10,13 @@
 
 #include "PosixTestClient.h"
 
-const unsigned MAX_ATTEMPTS = 1;
+const unsigned MAX_ATTEMPTS = 50;
 const unsigned SLEEP_TIME = 10;
 
 int main(int argc, char** argv)
 {
 	const char* host = argc > 1 ? argv[1] : "";
-	unsigned int port = argc > 2 ? atoi(argv[2]) : 7496;
+	unsigned int port = 7496;
 	int clientId = 0;
 
 	unsigned attempt = 0;
