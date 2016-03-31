@@ -6,7 +6,7 @@
 
 #include "CommonDefs.h"
 #include "IBString.h"
-
+#include "TagValue.h" 
 namespace IB {
 
 struct Contract;
